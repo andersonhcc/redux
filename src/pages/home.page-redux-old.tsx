@@ -3,7 +3,14 @@ import React from 'react';
 import {View, Text, SafeAreaView, Button} from 'react-native';
 import {connect} from 'react-redux';
 
-const Home = ({count, increment, decrement, morefive}) => {
+type Props = {
+  count: string;
+  increment: () => void;
+  decrement: () => void;
+  morefive: () => void;
+};
+
+const Home = ({count, increment, decrement, morefive}: Props) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -16,13 +23,13 @@ const Home = ({count, increment, decrement, morefive}) => {
   );
 };
 
-const mapProps = state => {
+const mapProps = (state: string) => {
   return {
     count: state,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch: ({type}: {type: string}) => void) => {
   return {
     increment: () => dispatch({type: 'counter/increment'}),
     decrement: () => dispatch({type: 'counter/decrement'}),

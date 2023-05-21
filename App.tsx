@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './src/pages/home.page';
+import Home from './src/pages/home.page-redux-old';
 import {Provider} from 'react-redux';
 import {store} from './src/store-redux-old';
 const App: React.FC = () => {
